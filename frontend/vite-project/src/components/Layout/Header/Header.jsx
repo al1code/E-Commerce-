@@ -6,7 +6,7 @@ const Header = () => {
       <div className="global-notification">
         <div className="container">
           <p>
-            BAHARA ÖZEL TÜM ÜRÜNLERDE %50 İNDİRİM!
+            BAHARA ÖZEL TÜM ÜRÜNLERDE İNDİRİM!
             <a href="shop.html"> ŞİMDİ ALIŞVERİŞE BAŞLA</a>
           </p>
         </div>
