@@ -1,0 +1,114 @@
+import "./Info.css";
+
+const Info = () => {
+  return (
+    <div className="product-info">
+      <h1 className="product-title">Mavi Kot Pantolon</h1>
+      <div className="product-review">
+        <ul className="product-star">
+          <li>
+            <i className="bi bi-star-fill"></i>
+          </li>
+          <li>
+            <i className="bi bi-star-fill"></i>
+          </li>
+          <li>
+            <i className="bi bi-star-fill"></i>
+          </li>
+          <li>
+            <i className="bi bi-star-fill"></i>
+          </li>
+          <li>
+            <i className="bi bi-star-half"></i>
+          </li>
+        </ul>
+        <span>2 Yorum</span>
+      </div>
+      <div className="product-price">
+        <s className="old-price">1000₺</s>
+        <strong className="new-price">799₺</strong>
+      </div>
+      <p className="product-description">
+        Modern kesimi ve klasik mavi tonuyla gardırobunuzun vazgeçilmezi olacak
+        bu kot pantolon, her kombine kolayca uyum sağlar. Esnek yapısıyla gün
+        boyu konfor sunarken, şık duruşuyla tarzınızı ön plana çıkarır.
+      </p>
+      <form className="variations-form">
+        <div className="variations">
+          <div className="colors">
+            <div className="colors-label">
+              <span>Renk</span>
+            </div>
+            <div className="colors-wrapper">
+              <div className="color-wrapper">
+                <label className="blue-color">
+                  <input type="radio" name="product-color" />
+                </label>
+              </div>
+              <div className="color-wrapper">
+                <label className="red-color">
+                  <input type="radio" name="product-color" />
+                </label>
+              </div>
+              <div className="color-wrapper active">
+                <label className="green-color">
+                  <input type="radio" name="product-color" />
+                </label>
+              </div>
+              <div className="color-wrapper">
+                <label className="purple-color">
+                  <input type="radio" name="product-color" />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="values">
+            <div className="values-label">
+              <span>Beden</span>
+            </div>
+            <div className="values-list">
+              <span className="active">XS</span>
+              <span>S</span>
+              <span>M</span>
+              <span>L</span>
+              <span>XL</span>
+            </div>
+          </div>
+          <div className="cart-button">
+            <input type="number" defaultValue="1" min="1" id="quantity" />
+            <button
+              className="btn btn-lg btn-primary"
+              id="add-to-cart"
+              type="button"
+            >
+              Sepete Ekle
+            </button>
+          </div>
+          <div className="product-extra-buttons">
+            <a href="#">
+              <i className="bi bi-globe"></i>
+              <span> Beden Rehberi</span>
+            </a>
+            <a href="#">
+              <i className="bi bi-heart"></i>
+              <span> Favorilere Ekle</span>
+            </a>
+            <a href="#">
+              <i className="bi bi-share"></i>
+              <span> Paylaş</span>
+            </a>
+          </div>
+        </div>
+      </form>
+      <div className="divider"></div>
+      <div className="product-meta">
+        <div className="product-categories">
+          <span>Kategoriler:</span>
+          <strong> Pantolonlar, Erkek</strong>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Info;
