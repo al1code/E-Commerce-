@@ -147,11 +147,6 @@ const Header = () => {
                     </div>
                   </li>
                   <li className="menu-list-item">
-                    <a href="blog.html" className="menu-link">
-                      BLOG
-                    </a>
-                  </li>
-                  <li className="menu-list-item">
                     <a href="contact.html" className="menu-link">
                       İLETİŞİM
                     </a>
