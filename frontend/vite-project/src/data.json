@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "name": "Çizgili Ceket ve Pantolon",
+    "price": {
+      "oldPrice": 1500,
+      "newPrice": 999
+    },
+    "discount": 33,
+    "img": {
+      "singleImage": "img/products/product1/1.png",
+      "thumbs": [
+        "img/products/product1/1.png",
+        "img/products/product1/2.png",
+        "img/products/product1/3.png",
+        "img/products/product1/3.png"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Mavi Kot Pantolon",
+    "price": {
+      "oldPrice": 1000,
+      "newPrice": 799
+    },
+    "discount": 20,
+    "img": {
+      "singleImage": "img/products/product2/1.png",
+      "thumbs": [
+        "img/products/product2/1.png",
+        "img/products/product2/2.png",
+        "img/products/product2/3.png"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Şapka",
+    "price": {
+      "oldPrice": 400,
+      "newPrice": 199
+    },
+    "discount": 50,
+    "img": {
+      "singleImage": "img/products/product3/1.png",
+      "thumbs": [
+        "img/products/product3/1.png",
+        "img/products/product3/2.png",
+        "img/products/product3/3.png"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Uzun Kıyafet",
+    "price": {
+      "oldPrice": 600,
+      "newPrice": 399
+    },
+    "discount": 33,
+    "img": {
+      "singleImage": "img/products/product4/1.png",
+      "thumbs": [
+        "img/products/product4/1.png",
+        "img/products/product4/2.png",
+        "img/products/product4/3.png"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Mavi Gömlek",
+    "price": {
+      "oldPrice": 500,
+      "newPrice": 399
+    },
+    "discount": 20,
+    "img": {
+      "singleImage": "img/products/product5/1.png",
+      "thumbs": [
+        "img/products/product5/1.png",
+        "img/products/product5/2.png",
+        "img/products/product5/3.png"
+      ]
+    }
+  }
+]
