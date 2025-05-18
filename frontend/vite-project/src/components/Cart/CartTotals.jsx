@@ -1,4 +1,27 @@
+import { useContext, useState } from "react";
+import { CartContext } from "../../context/CartProvider";
+
 const CartTotals = () => {
+  const { cartItems } = useContext(CartContext);
+
+  const cartItemTotals = cartItems.map((item) => {
+    const itemTotal = item.price.newPrice * item.quantity;
+
+    return itemTotal;
+  });
+
+  const subTotals = cartItemTotals.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue;
+  }, 0);
+
+  const [fastCargoChecked, setFastCargoChecked] = useState(false);
+
+  const cargoFee = 100;
+
+  const cartTotals = fastCargoChecked
+    ? (subTotals + cargoFee).toFixed(2)
+    : subTotals.toFixed(2);
+
   return (
     <div className="cart-totals">
       <h2>Toplam Fiyat</h2>
@@ -7,7 +30,7 @@ const CartTotals = () => {
           <tr className="cart-subtotal">
             <th>Ürünler</th>
             <td>
-              <span id="subtotal">999₺</span>
+              <span id="subtotal">{subTotals.toFixed(2)}₺</span>
             </td>
           </tr>
           <tr>
@@ -17,7 +40,12 @@ const CartTotals = () => {
                 <li>
                   <label>
                     Hızlı Kargo: 100₺
-                    <input type="checkbox" id="fast-cargo" />
+                    <input
+                      type="checkbox"
+                      id="fast-cargo"
+                      checked={fastCargoChecked}
+                      onChange={() => setFastCargoChecked(!fastCargoChecked)}
+                    />
                   </label>
                 </li>
                 <li>
@@ -29,7 +57,7 @@ const CartTotals = () => {
           <tr>
             <th>Toplam</th>
             <td>
-              <strong id="cart-total">999₺</strong>
+              <strong id="cart-total">{cartTotals}₺</strong>
             </td>
           </tr>
         </tbody>

@@ -14,8 +14,8 @@ function App() {
       {/* <ShopPage /> */}
       {/* <ContactPage /> */}
       {/* <AuthPage /> */}
-      {/* <CartPage /> */}
-      <ProductDetailsPage />
+      <CartPage />
+      {/* <ProductDetailsPage /> */}
     </React.Fragment>
   );
 }
