@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
     res.status(201).json(newCategory);
   } catch (error) {
     console.log(error);
+    res.status(500).json({ error: "Sunucu Hatası" });
   }
 });
 
@@ -26,7 +27,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(categories);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Server Error" });
+    res.status(500).json({ error: "Sunucu Hatası" });
   }
 });
 
@@ -39,11 +40,11 @@ router.get("/:categoryId", async (req, res) => {
       res.status(200).json(category);
     } catch (error) {
       console.log(error);
-      res.status(404).json({ error: "Category is not found." });
+      res.status(404).json({ error: "Kategori bulunamadı." });
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Server Error" });
+    res.status(500).json({ error: "Sunucu Hatası" });
   }
 });
 
@@ -55,7 +56,7 @@ router.put("/:categoryId", async (req, res) => {
 
     const existingCategory = await Category.findById(categoryId);
     if (!existingCategory) {
-      return res.status(404).json({ error: "Category is not found." });
+      return res.status(404).json({ error: "Kategori bulunamadı." });
     }
 
     const updatedCategory = await Category.findByIdAndUpdate(
@@ -67,7 +68,7 @@ router.put("/:categoryId", async (req, res) => {
     res.status(200).json(updatedCategory);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Server Error" });
+    res.status(500).json({ error: "Sunucu Hatası" });
   }
 });
 
@@ -77,13 +78,13 @@ router.delete("/:categoryId", async (req, res) => {
     const categoryId = req.params.categoryId;
     const deletedCategory = await Category.findByIdAndDelete(categoryId);
     if (!deletedCategory) {
-      return res.status(404).json({ error: "Category is not found." });
+      return res.status(404).json({ error: "Kategori bulunamadı." });
     }
 
     res.status(200).json(deletedCategory);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Server Error" });
+    res.status(500).json({ error: "Sunucu Hatası" });
   }
 });
 
