@@ -6,6 +6,7 @@ import AuthPage from "./pages/AuthPage";
 import CartPage from "./pages/CartPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import "./App.css";
+import AdminUserPage from "./pages/admin/AdminUserPage";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       <Route path="auth" element={<AuthPage />} />
       <Route path="cart" element={<CartPage />} />
       <Route path="/product/:id" element={<ProductDetailsPage />} />
+      <Route path="/admin/*">
+        <Route path="users" element ={<AdminUserPage/>}></Route>
+      </Route>
     </Routes>
   );
 }

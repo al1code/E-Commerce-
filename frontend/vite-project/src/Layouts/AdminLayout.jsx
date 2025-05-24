@@ -13,8 +13,16 @@ import { useNavigate } from "react-router-dom";
 
 const { Sider, Header, Content } = Layout;
 
+const getUserRole = () => {
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user ? user.role : null ;
+
+}
+
 const AdminLayout = ({ children }) => {
   const navigate = useNavigate();
+  const userRole = getUserRole();
 
   const menuItems = [
     {
@@ -123,8 +131,9 @@ const AdminLayout = ({ children }) => {
       },
     },
   ];
-
-  return (
+  
+  if(userRole === "admin"){
+    return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sider width={200} theme="dark">
         <Menu
@@ -154,11 +163,17 @@ const AdminLayout = ({ children }) => {
             }}
           >
             {children}
+           
           </div>
         </Content>
       </Layout>
     </Layout>
   );
+  }else{
+    return (window.location.href = "/");
+  }
+
+  
 };
 
 AdminLayout.propTypes = {
