@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Reviews from "../../Reviews/Reviews";
+import PropTypes from "prop-types"; 
 import "./Tabs.css";
 
-const Tabs = () => {
+const Tabs = ({singleProduct}) => {
   const [activeTab, setActiveTab] = useState("desc");
 
   const handleTabClick = (e, tab) => {
@@ -48,17 +49,7 @@ const Tabs = () => {
           }`}
           id="desc"
         >
-          <p>
-            Modern kesimi ve klasik mavi tonuyla gardırobunuzun vazgeçilmezi
-            olacak bu kot pantolon, her kombine kolayca uyum sağlar. Esnek
-            yapısıyla gün boyu konfor sunarken, şık duruşuyla tarzınızı ön plana
-            çıkarır. %98 pamuk, %2 elastan içeriği sayesinde hem nefes
-            alabilirlik sağlar hem de hareket özgürlüğü sunar. Orta bel yapısı
-            ve dar paça kesimiyle vücuda tam oturur, günlük kullanım için
-            idealdir. 5 cepli klasik jean tasarımıyla fonksiyonel, fermuar ve
-            düğme kapamalı yapısıyla pratiktir. Hafif taşlanmış yüzeyi sayesinde
-            doğal ve modern bir görünüm elde edilmiştir.
-          </p>
+          <p className="product-description">{singleProduct.description}</p>
         </div>
         <div
           className={`tab-panel-information content ${
@@ -78,7 +69,16 @@ const Tabs = () => {
               <tr>
                 <th>Beden</th>
                 <td>
-                  <p>XS, S, M, L, XL</p>
+                  <p>
+
+                    {singleProduct.sizes.map((item,index)=>(
+                      <span key={index}>
+                        {item.toUpperCase()}
+                        {index < singleProduct.sizes.length -1 && ", "}
+                      </span>
+                    ))}
+
+                  </p>
                 </td>
               </tr>
             </tbody>
@@ -86,6 +86,7 @@ const Tabs = () => {
         </div>
         <Reviews
           active={activeTab === "reviews" ? "content active" : "content"}
+          singleProduct={singleProduct}
         />
       </div>
     </div>
@@ -93,3 +94,7 @@ const Tabs = () => {
 };
 
 export default Tabs;
+
+Tabs.propTypes = {
+  singleProduct: PropTypes.object,
+}

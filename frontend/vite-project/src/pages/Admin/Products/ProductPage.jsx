@@ -39,7 +39,7 @@ const ProductPage = () => {
     },
 
     {
-      title: "Fiyat",
+      title: "İndirim",
       dataIndex: "price",
       key: "price",
       render: (text) => <span>%{text.discount}</span>,

@@ -3,20 +3,19 @@ import { CartContext } from "../../context/CartProvider";
 
 const CartTotals = () => {
   const { cartItems } = useContext(CartContext);
-
-  const cartItemTotals = cartItems.map((item) => {
-    const itemTotal = item.price.newPrice * item.quantity;
-
-    return itemTotal;
-  });
-
-  const subTotals = cartItemTotals.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue;
-  }, 0);
-
   const [fastCargoChecked, setFastCargoChecked] = useState(false);
 
   const cargoFee = 100;
+
+  const cartItemTotals = cartItems.map((item) => {
+    const unitPrice =
+      typeof item.price === "number"
+        ? item.price
+        : item.price.current;
+    return unitPrice * item.quantity;
+  });
+
+  const subTotals = cartItemTotals.reduce((acc, val) => acc + val, 0);
 
   const cartTotals = fastCargoChecked
     ? (subTotals + cargoFee).toFixed(2)
@@ -44,7 +43,9 @@ const CartTotals = () => {
                       type="checkbox"
                       id="fast-cargo"
                       checked={fastCargoChecked}
-                      onChange={() => setFastCargoChecked(!fastCargoChecked)}
+                      onChange={() =>
+                        setFastCargoChecked(!fastCargoChecked)
+                      }
                     />
                   </label>
                 </li>

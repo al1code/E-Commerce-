@@ -8,15 +8,22 @@ const ProductItem = ({ productItem }) => {
   const { cartItems, addToCard } = useContext(CartContext);
 
   const filteredCard = cartItems.find(
-    (cartItem) => cartItem.id === productItem.id
+    (cartItem) => cartItem._id === productItem._id
   );
+
+  const originalPrice = productItem.price.current;
+  const discountPercentage = productItem.price.discount;
+
+  // Calculating discounted price
+  const discountedPrice =
+    originalPrice - (originalPrice * discountPercentage) / 100;
 
   return (
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
         <a href="#">
-          <img src={productItem.img.singleImage} alt="" className="img1" />
-          <img src={productItem.img.thumbs[1]} alt="" className="img2" />
+          <img src={productItem.img[0]} alt="" className="img1" />
+          <img src={productItem.img[1]} alt="" className="img2" />
         </a>
       </div>
       <div className="product-info">
@@ -41,18 +48,20 @@ const ProductItem = ({ productItem }) => {
           </li>
         </ul>
         <div className="product-prices">
-          <strong className="new-price">
-            {productItem.price.newPrice.toFixed(2)}₺
-          </strong>
-          <span className="old-price">
-            {productItem.price.oldPrice.toFixed(2)}₺
-          </span>
+          <strong className="new-price">{discountedPrice.toFixed(2)}₺</strong>
+          <span className="old-price">{originalPrice.toFixed(2)}₺</span>
         </div>
-        <span className="product-discount">-{productItem.discount}%</span>
+        <span className="product-discount">-{productItem.price.discount}%</span>
         <div className="product-links">
           <button
             className="add-to-cart"
-            onClick={() => addToCard(productItem)}
+            onClick={() =>
+              addToCard({
+                ...productItem,
+                  price: discountedPrice,
+                
+              })
+            }
             disabled={filteredCard}
           >
             <i className="bi bi-basket-fill"></i>
@@ -60,7 +69,7 @@ const ProductItem = ({ productItem }) => {
           <button>
             <i className="bi bi-heart-fill"></i>
           </button>
-          <Link to={`/product/${productItem.id}`} className="product-link">
+          <Link to={`/product/${productItem._id}`} className="product-link">
             <i className="bi bi-eye-fill"></i>
           </Link>
           <a href="#">

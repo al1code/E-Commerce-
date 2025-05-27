@@ -25,7 +25,7 @@ const CartProvider = ({ children }) => {
 
   const removeFromCart = (itemId) => {
     const filteredCardItems = cartItems.filter((cartItem) => {
-      return cartItem.id !== itemId;
+      return cartItem._id !== itemId;
     });
     setCartItems(filteredCardItems);
   };
