@@ -24,7 +24,7 @@ const UserPage = () => {
       },
     },
     {
-      title: "Username",
+      title: "Kullanıcı Adı",
       dataIndex: "username",
       key: "username",
     },
@@ -35,13 +35,13 @@ const UserPage = () => {
     },
 
     {
-      title: "Role",
+      title: "Rol",
       dataIndex: "role",
       key: "role",
     },
 
     {
-      title: "Actions",
+      title: "İşlemler",
       dataIndex: "actions",
       key: "actions",
       render: (_,record) => (
