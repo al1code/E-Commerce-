@@ -44,7 +44,7 @@ const UserPage = () => {
       title: "İşlemler",
       dataIndex: "actions",
       key: "actions",
-      render: (_,record) => (
+      render: (_, record) => (
         <Popconfirm
           title="Kullanıcıyı Sil"
           description="Kullanıcıyı silmek istediğinize emin misiniz?"
@@ -81,19 +81,20 @@ const UserPage = () => {
   const deleteUser = async (userEmail) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/users/${userEmail}`,{
-          method:"DELETE",
+        `http://localhost:5000/api/users/${userEmail}`,
+        {
+          method: "DELETE",
         }
       );
       if (response.ok) {
-        message.success("Kullanıcı başarıyla silindi ")
+        message.success("Kullanıcı başarıyla silindi ");
         fetchUsers();
       } else {
         message.error("Silme işlemi başarısız.");
       }
     } catch (error) {
       console.log("Silme hatası:", error);
-    } 
+    }
   };
 
   useEffect(() => {

@@ -1,15 +1,18 @@
 const mongoose = require("mongoose");
 const Category = require("./Category");
 
-const ReviewSchema = mongoose.Schema({
-  text: { type: String, required: true },
-  rating: { type: Number, required: true },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
+const ReviewSchema = mongoose.Schema(
+  {
+    text: { type: String, required: true },
+    rating: { type: Number, required: true },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
-});
+  { timestamps: true }
+);
 
 const ProductSchema = mongoose.Schema(
   {
@@ -28,8 +31,6 @@ const ProductSchema = mongoose.Schema(
       ref: Category,
       required: true,
     },
-    
-
   },
   { timestamps: true }
 );

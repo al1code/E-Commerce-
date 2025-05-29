@@ -26,7 +26,10 @@ const ProductDetailsPage = () => {
   }, [productId]);
 
   return singleProduct ? (
-    <ProductDetails singleProduct={singleProduct} />
+    <ProductDetails
+      singleProduct={singleProduct}
+      setSingleProduct={setSingleProduct}
+    />
   ) : (
     <p>Ürün Yükleniyor</p>
   );

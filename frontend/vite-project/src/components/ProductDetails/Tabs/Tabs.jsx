@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Reviews from "../../Reviews/Reviews";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 import "./Tabs.css";
 
-const Tabs = ({singleProduct}) => {
+const Tabs = ({ singleProduct, setSingleProduct }) => {
   const [activeTab, setActiveTab] = useState("desc");
 
   const handleTabClick = (e, tab) => {
@@ -70,14 +70,12 @@ const Tabs = ({singleProduct}) => {
                 <th>Beden</th>
                 <td>
                   <p>
-
-                    {singleProduct.sizes.map((item,index)=>(
+                    {singleProduct.sizes.map((item, index) => (
                       <span key={index}>
                         {item.toUpperCase()}
-                        {index < singleProduct.sizes.length -1 && ", "}
+                        {index < singleProduct.sizes.length - 1 && ", "}
                       </span>
                     ))}
-
                   </p>
                 </td>
               </tr>
@@ -87,6 +85,7 @@ const Tabs = ({singleProduct}) => {
         <Reviews
           active={activeTab === "reviews" ? "content active" : "content"}
           singleProduct={singleProduct}
+          setSingleProduct={setSingleProduct}
         />
       </div>
     </div>
@@ -97,4 +96,5 @@ export default Tabs;
 
 Tabs.propTypes = {
   singleProduct: PropTypes.object,
-}
+  setSingleProduct: PropTypes.func,
+};
