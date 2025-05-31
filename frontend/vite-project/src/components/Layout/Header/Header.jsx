@@ -5,9 +5,8 @@ import "./Header.css";
 
 const Header = ({ setIsSearchShow }) => {
   const { cartItems } = useContext(CartContext);
-  const user  = localStorage.getItem("user");
+  const user = localStorage.getItem("user");
   const { pathname } = useLocation();
-
 
   return (
     <header>
@@ -181,8 +180,8 @@ const Header = ({ setIsSearchShow }) => {
                 <Link to={"/auth"} className="header-account">
                   <i className="bi bi-person"></i>
                 </Link>
-                
-               {/* <a href="#">
+
+                {/* <a href="#">
                   <i className="bi bi-heart"></i>
                 </a>*/}
                 <div className="header-cart">
@@ -193,7 +192,7 @@ const Header = ({ setIsSearchShow }) => {
                     </span>
                   </Link>
                 </div>
-               {user && (
+                {user && (
                   <button
                     className="search-button"
                     onClick={() => {

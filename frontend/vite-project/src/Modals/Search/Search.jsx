@@ -1,5 +1,5 @@
-import "./Search.css";
 import PropTypes from "prop-types";
+import "./Search.css";
 
 const Search = ({ isSearchShow, setIsSearchShow }) => {
   return (
