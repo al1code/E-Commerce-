@@ -21,7 +21,6 @@ const Success = () => {
             <Link to={"/"} key="home">
               <Button type="primary">Ana Sayfa</Button>
             </Link>,
-            <Button key="buy">Siparişlerim</Button>,
           ]}
         />
       </div>
