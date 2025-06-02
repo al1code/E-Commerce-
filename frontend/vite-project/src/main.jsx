@@ -5,12 +5,14 @@ import { Layout } from "./Layouts/Layouts.jsx";
 import App from "./App.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import "./index.css";
 
 console.log(window.location);
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+    <ScrollToTop />
     <CartProvider>
       <Layout>
         <App />
