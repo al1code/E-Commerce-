@@ -16,6 +16,12 @@ const ReviewForm = ({ singleProduct, setSingleProduct }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (rating === 0) {
+      message.warning("Lütfen yıldız seçiniz!");
+      return;
+    }
+
     const formData = {
       reviews: [
         ...singleProduct.reviews,
@@ -52,8 +58,6 @@ const ReviewForm = ({ singleProduct, setSingleProduct }) => {
       console.log(error);
     }
   };
-
-  console.log(singleProduct);
 
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
@@ -121,14 +125,8 @@ const ReviewForm = ({ singleProduct, setSingleProduct }) => {
           rows="10"
           onChange={(e) => setReview(e.target.value)}
           value={review}
+          required
         ></textarea>
-      </div>
-      <div className="comment-form-cookies">
-        <input id="cookies" type="checkbox" />
-        <label htmlFor="cookies">
-          Bilgilerimi bir sonraki yorum için sakla.
-          <span className="required">*</span>
-        </label>
       </div>
       <div className="form-submit">
         <input type="submit" className="btn submit" />

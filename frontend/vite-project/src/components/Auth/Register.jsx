@@ -51,7 +51,12 @@ const Register = () => {
             <span>
               Kullanıcı Adı <span className="required">*</span>
             </span>
-            <input type="text" onChange={handleInputChange} name="username" />
+            <input
+              type="text"
+              onChange={handleInputChange}
+              name="username"
+              required
+            />
           </label>
         </div>
         <div>
@@ -59,7 +64,12 @@ const Register = () => {
             <span>
               E-Mail Adresi <span className="required">*</span>
             </span>
-            <input type="email" onChange={handleInputChange} name="email" />
+            <input
+              type="email"
+              onChange={handleInputChange}
+              name="email"
+              required
+            />
           </label>
         </div>
         <div>
@@ -71,6 +81,7 @@ const Register = () => {
               type="password"
               onChange={handleInputChange}
               name="password"
+              required
             />
           </label>
         </div>
