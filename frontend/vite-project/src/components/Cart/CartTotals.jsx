@@ -88,9 +88,6 @@ const CartTotals = () => {
                     />
                   </label>
                 </li>
-                <li>
-                  <a href="#">Adresi Değiştir</a>
-                </li>
               </ul>
             </td>
           </tr>

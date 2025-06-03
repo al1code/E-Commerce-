@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <footer className="footer">
       <div className="subscribe-row">
@@ -24,7 +31,9 @@ const Footer = () => {
                       type="text"
                       placeholder="E-mail adresinizi giriniz."
                     />
-                    <button className="btn">Üye Ol</button>
+                    <button className="btn" onClick={handleClick}>
+                      Üye Ol
+                    </button>
                   </form>
                 </div>
               </div>
@@ -64,7 +73,7 @@ const Footer = () => {
           <div className="footer-widgets">
             <div className="brand-info">
               <div className="footer-logo">
-                <a href="index.html" className="logo">
+                <a href="#" className="logo">
                   {"GRA</B>"}
                 </a>
               </div>

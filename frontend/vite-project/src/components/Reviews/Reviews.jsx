@@ -42,7 +42,6 @@ const Reviews = ({ active, singleProduct, setSingleProduct }) => {
     <div className={`tab-panel-reviews ${active}`}>
       {singleProduct.reviews.length > 0 ? (
         <>
-          <h3>2 yorum</h3>
           <div className="comments">
             <ol className="comment-list">
               {thisReview.map((item, index) => (

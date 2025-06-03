@@ -21,7 +21,7 @@ const CartItem = ({ cartItem }) => {
         ></i>
       </td>
       <td>{cartItem.name}</td>
-      <td>{unitPrice}₺</td>
+      <td>{unitPrice.toFixed(2)}₺</td>
       <td className="product-quantity">{cartItem.quantity}</td>
       <td className="product-subtotal">
         {(unitPrice * cartItem.quantity).toFixed(2)}₺

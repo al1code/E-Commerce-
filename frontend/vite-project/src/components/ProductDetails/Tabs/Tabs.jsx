@@ -57,7 +57,6 @@ const Tabs = ({ singleProduct, setSingleProduct }) => {
           }`}
           id="info"
         >
-          <h3>Diğer Bilgiler</h3>
           <table>
             <tbody>
               <tr>

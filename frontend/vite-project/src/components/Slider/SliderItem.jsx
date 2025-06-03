@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const SliderItem = ({ imageSrc }) => {
   return (
@@ -9,9 +10,9 @@ const SliderItem = ({ imageSrc }) => {
       <div className="container">
         <p className="slider-title">İLKBAHAR 2025</p>
         <h2 className="slider-heading">%70'e Varan İndirimler</h2>
-        <a href="#" className="btn btn-lg btn-primary">
+        <Link to={"/shop"} className="btn btn-lg btn-primary">
           ŞİMDİ KEŞFET
-        </a>
+        </Link>
       </div>
     </div>
   );

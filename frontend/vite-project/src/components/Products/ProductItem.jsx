@@ -21,15 +21,15 @@ const ProductItem = ({ productItem }) => {
   return (
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
-        <a href="#">
+        <Link to={`/product/${productItem._id}`}>
           <img src={productItem.img[0]} alt="" className="img1" />
           <img src={productItem.img[1]} alt="" className="img2" />
-        </a>
+        </Link>
       </div>
       <div className="product-info">
-        <a href="$" className="product-title">
+        <Link to={`/product/${productItem._id}`} className="product-title">
           {productItem.name}
-        </a>
+        </Link>
         <ul className="product-star">
           <li>
             <i className="bi bi-star-fill"></i>
@@ -58,23 +58,13 @@ const ProductItem = ({ productItem }) => {
             onClick={() =>
               addToCard({
                 ...productItem,
-                  price: discountedPrice,
-                
+                price: discountedPrice,
               })
             }
             disabled={filteredCard}
           >
             <i className="bi bi-basket-fill"></i>
           </button>
-          <button>
-            <i className="bi bi-heart-fill"></i>
-          </button>
-          <Link to={`/product/${productItem._id}`} className="product-link">
-            <i className="bi bi-eye-fill"></i>
-          </Link>
-          <a href="#">
-            <i className="bi bi-share-fill"></i>
-          </a>
         </div>
       </div>
     </div>

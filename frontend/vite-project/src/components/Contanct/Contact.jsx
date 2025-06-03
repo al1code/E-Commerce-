@@ -33,7 +33,7 @@ const Contact = () => {
                 </div>
                 <div className="">
                   <label>
-                    E-mail
+                    E-Mail
                     <span>*</span>
                   </label>
                   <input type="text" required />

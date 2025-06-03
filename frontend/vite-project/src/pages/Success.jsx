@@ -19,7 +19,9 @@ const Success = () => {
           subTitle="Siparişiniz başarıyla tamamlandı."
           extra={[
             <Link to={"/"} key="home">
-              <Button type="primary">Ana Sayfa</Button>
+              <Button type="primary" danger>
+                Ana Sayfa
+              </Button>
             </Link>,
           ]}
         />

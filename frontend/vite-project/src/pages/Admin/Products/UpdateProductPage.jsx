@@ -1,6 +1,6 @@
 import { Form, Input, InputNumber, Spin, message, Select, Button } from "antd";
 import { useEffect, useState } from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const UpdateProductPage = () => {
   const [loading, setLoading] = useState(false);
@@ -187,7 +187,7 @@ const UpdateProductPage = () => {
         </Form.Item>
 
         <Form.Item
-          label="Ürün Renkleri  (RGB kodları)"
+          label="Ürün Renkleri  (HEX kodları)"
           name="colors"
           rules={[
             {

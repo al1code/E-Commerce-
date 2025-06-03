@@ -54,8 +54,7 @@ const Login = () => {
         <div>
           <label>
             <span>
-              Kullanıcı Adı veya E-Mail Adresi{" "}
-              <span className="required">*</span>
+              E-Mail Adresi <span className="required">*</span>
             </span>
             <input
               type="text"
@@ -79,10 +78,6 @@ const Login = () => {
           </label>
         </div>
         <p className="remember">
-          <label>
-            <input type="checkbox" />
-            <span>Beni Hatırla</span>
-          </label>
           <button className="btn btn-sm">Giriş Yap</button>
         </p>
         <a href="#" className="form-link">

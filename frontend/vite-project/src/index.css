@@ -73,14 +73,14 @@ button:disabled {
 }
 
 .btn-primary {
-  background-color: #1367ef;
+  background-color: #cc2d2d;
   color: #fff;
-  border-color: #1367ef;
+  border-color: #cc2d2d;
 }
 
 .btn-primary:hover {
   background-color: #fff;
-  color: #1367ef;
+  color: #cc2d2d;
 }
 
 textarea {
@@ -143,7 +143,6 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* react-slick-css */
 .slick-slide > div {
   margin: 0 10px;
 }

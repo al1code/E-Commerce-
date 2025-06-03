@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useRef,useContext } from "react";
+import { useRef, useContext } from "react";
 import { CartContext } from "../../../context/CartProvider";
 import "./Info.css";
 
@@ -116,13 +116,6 @@ const Info = ({ singleProduct }) => {
           </div>
         </div>
       </form>
-      <div className="divider"></div>
-      <div className="product-meta">
-        <div className="product-categories">
-          <span>Kategoriler:</span>
-          <strong> Pantolonlar, Erkek</strong>
-        </div>
-      </div>
     </div>
   );
 };
