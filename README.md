@@ -1,3 +1,3 @@
-"#E-Commerce Project " 
+<h2>E-Commerce Project</h2>
 
-Proje dosyalarımız "master" branch'de.
+🔴 Proje dosyalarımız <b>master</b> branch'de.
