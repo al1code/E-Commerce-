@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import "./index.css";
 
+
 console.log(window.location);
 
 createRoot(document.getElementById("root")).render(

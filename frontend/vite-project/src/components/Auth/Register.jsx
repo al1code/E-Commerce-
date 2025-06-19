@@ -31,9 +31,11 @@ const Register = () => {
       if (response.ok) {
         const data = await response.json();
 
-        localStorage.setItem("user", JSON.stringify(data));
-        message.success("Kayıt başarılı.");
-        navigate("/");
+        message.success("Kayıt başarılı. Lütfen e-posta adresinize gelen kodla hesabınızı doğrulayın.");
+
+        localStorage.setItem("verificationEmail", formData.email);
+        
+        navigate("/verify-code");
       } else {
         message.error("Kayıt başarısız.");
       }
